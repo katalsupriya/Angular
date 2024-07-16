@@ -1,0 +1,31 @@
+<div class="container text-center py-5">
+  <!-- Data Binding -->
+  <button class="btn btn-primary" [disabled]="!allowNewServer">Add Server</button> <!-- Property binding -->
+  <p>{{allowNewServer}}</p> <!-- Property binding -->
+  <h1>Serve ID {{serverId}} is {{getServerStatus}}</h1> <!-- string interpolation -->
+</div>
+
+<div class="container text-center pb-5">
+  <!-- Property Binding -->
+  <button class="btn btn-primary" [disabled]="!allowNewServer">Add Server</button> <!-- Property binding -->
+  <p [innerHtml]='allowNewServer'></p> <!-- property interpolation -->
+</div>
+
+<div class="container text-center pb-5">
+  <!-- Event Binding -->
+  <button class="btn btn-primary" (click)="onCreateServer()">Create Server</button> <!-- Property binding -->
+  <p>{{serverCreationStatus}}</p> <!-- Property binding -->
+</div>
+
+<div class="container text-center pb-5">
+    <!-- Passing and using data with event Binding -->
+    <input type="text" class="form-control" placeholder="Username" (input)="onUpdateServerName($event)">
+    <p>{{serverName}}</p> <!-- Property binding -->
+</div>
+
+<div class="container text-center pb-5">
+    <!-- Passing and using data with event Binding -->
+    <input type="text" class="form-control" [(ngModel)]="twoWayServer">
+    <p>{{twoWayServer}}</p> <!-- Property binding -->
+</div>
+  
